@@ -1,5 +1,4 @@
-
-    <template>
+<template>
       <full-calendar :events="events" />
     </template>
 

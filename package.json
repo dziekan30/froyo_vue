@@ -7,9 +7,18 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "axios": "^0.19.2",
+    "body-parser": "^1.19.0",
     "core-js": "^3.6.4",
+    "date-fns": "^2.9.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "pusher": "^3.0.0",
+    "pusher-js": "^5.1.1",
     "vue": "^2.6.11",
-    "vue-router": "^3.1.5"
+    "vue-fullcalendar": "^1.0.9",
+    "vue-router": "^3.1.5",
+    "vuejs-datepicker": "^1.6.2"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.2.0",
