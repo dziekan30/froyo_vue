@@ -1,13 +1,13 @@
 <template>
       <form @submit.prevent="handleSubmit">
         <div class="input-holder">
-          <input type="text" placeholder="Event title" v-model="event.title"/>
+          <input type="text" placeholder="Event name" v-model="event.name"/>
         </div>
         <div class="input-holder">
-          <date-picker :placeholder="'Start date'" v-model="event.start" /> 
+          <date-picker :placeholder="'Start date'" v-model="event.start_time" /> 
         </div>
         <div class="input-holder">
-          <date-picker :placeholder="'End date'" v-model="event.end"/> 
+          <date-picker :placeholder="'End date'" v-model="event.end_time"/> 
         </div>
         <div class="input-holder">
           <textarea placeholder="Event description" rows="4" v-model="event.data.description" ></textarea>
@@ -19,7 +19,7 @@
           <button type="submit">Schedule</button>
         </div>
       </form>
-    </template>
+</template>
 
     <script>
     import DatePicker from 'vuejs-datepicker';
@@ -31,9 +31,9 @@
       data(){
         return {
           event: {
-            title: '',
-            start: '',
-            end: '',
+            name: '',
+            start_time: '',
+            end_time: '',
             cssClass: '',
             data: {
               description: ''
@@ -42,9 +42,9 @@
         }
       },
       methods: {
-        async handleSubmit(){
-          const start = format(this.event.start, 'yyyy-mm-dd');
-          const end = format(this.event.end, 'yyyy-mm-dd');
+        async handleSubmit() {
+          const start = format(this.event.start_time, 'yyyy-mm-dd');
+          const end = format(this.event.end_time, 'yyyy-mm-dd');
           const event = {
             ...this.event,
             start,
@@ -68,9 +68,9 @@
         },
         resetValues(){
           this.event = {
-            title: '',
-            start: '',
-            end: '',
+            name: '',
+            start_time: '',
+            end_time: '',
             cssClass: '',
             data: {
               description: ''

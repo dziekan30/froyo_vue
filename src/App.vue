@@ -1,5 +1,13 @@
 <template>
       <div id="app">
+        <div id="nav">
+              <router-link to="/">Home</router-link>
+              <router-link to="/signup">Signup</router-link>
+              <router-link to="/login">Login</router-link>
+              <router-link to="/logout">Logout</router-link>
+              <router-link to="/postsindex">PostsIndex</router-link>
+            </div>
+            <router-view/>
         <div class="main">
           <div class="calendar-holder">
             <calendar :events="events" />
@@ -46,13 +54,14 @@
         const channel = pusher.subscribe('schedule');
         channel.bind('new-event', (data) => {
           this.events = [
-            ...this.events,
+            this.events,
             data
           ];
         })
       }
     }
     </script>
+
     <style>
     #app {
       font-family: 'Avenir', Helvetica, Arial, sans-serif;
